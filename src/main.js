@@ -44,5 +44,10 @@ document.getElementById('btn-back').addEventListener('click', () => {
   alert('Zurück-Funktion wird im nächsten Schritt gebaut!');
 });
 
+// Event-Listener für das Login-Icon im Header
+document.getElementById('btn-login').addEventListener('click', () => {
+  alert('Supabase-Login wird hier später geladen!');
+});
+
 // Die App starten und das Dashboard zeigen
 renderDashboard();

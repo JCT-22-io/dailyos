@@ -35,7 +35,8 @@ header {
   color: var(--bg-color);              /* Text in hellem Beige */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 15px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -159,4 +160,46 @@ footer {
   background-color: var(--bg-color); /* Komplett ausgefüllt mit dem hellen Beige */
   border-radius: 2px;               /* Ganz leicht abgerundete Ecken für einen modernen Look */
   display: inline-block;
+}
+
+/* Styling für das Login-Icon im Header */
+.header-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--bg-color); /* Nutzt das gleiche helle Beige wie die Footer-Buttons */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.header-btn:active {
+  background-color: rgba(255, 255, 255, 0.1); /* Haptisches Feedback beim Tippen */
+}
+
+/* Das cleane CSS-Profil-Icon */
+.user-icon-css {
+  width: 12px;
+  height: 12px;
+  background-color: var(--bg-color); /* Kopf in hellem Beige */
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  margin-top: -6px; /* Leicht nach oben versetzt für die Proportionen */
+}
+
+/* Der Körper/Schultern des Icons */
+.user-icon-css::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -4px;
+  width: 20px;
+  height: 8px;
+  background-color: var(--bg-color); /* Schultern ebenfalls in hellem Beige */
+  border-radius: 10px 10px 0 0; /* Oben abgerundet, unten flach */
 }
