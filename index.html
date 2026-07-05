@@ -1,13 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04_dailyos</title>
+    <title>dailyOS</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
   </head>
   <body>
-    <div id="app"></div>
+
+    <header>
+      <h1 id="app-title">dailyOS</h1>
+    </header>
+
+    <main id="app"></main>
+
+    <footer>
+      <button id="btn-back" class="nav-btn">◀</button>
+      
+      <button id="btn-home" class="nav-btn">⬜</button>
+      
+      <div class="search-wrapper">
+        <input type="text" id="search-input" class="search-input" placeholder="🔍 Modul suchen..." />
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
