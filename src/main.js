@@ -49,5 +49,26 @@ document.getElementById('btn-login').addEventListener('click', () => {
   alert('Supabase-Login wird hier später geladen!');
 });
 
+document.getElementById('search-input').addEventListener('input', (event) => {
+  // 1. Wir holen uns den aktuellen Suchbegriff in Kleinbuchstaben
+  const eingabeSearchInput = event.target.value.toLowerCase();
+  
+  // 2. Wir holen uns die ALLERNEUESTE Liste der Kacheln
+  const kacheln = document.querySelectorAll('.card');
+
+  // 3. Wir gehen jede Kachel durch
+  kacheln.forEach((kachel) => {
+    // JETZT NEU: Nur querySelector (ohne "All"), um die eine Überschrift zu greifen
+    const kachelText = kachel.querySelector('h3').textContent.toLowerCase();
+
+    // 4. Prüfen: Ist der Suchbegriff im Kacheltext enthalten?
+    if (kachelText.includes(eingabeSearchInput)) {
+      kachel.style.display = 'block'; // Korrigiert: display statt diyplay
+    } else {
+      kachel.style.display = 'none';  // Korrigiert: display statt diyplay
+    }
+  });
+});
+
 // Die App starten und das Dashboard zeigen
 renderDashboard();
