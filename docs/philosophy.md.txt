@@ -1,0 +1,22 @@
+DailyOS Philosophy
+Mobile First
+Einfach statt komplex
+Ein Modul = eine Aufgabe
+Offline-fähig, wenn sinnvoll
+Dashboard kennt nur Module
+Daten liegen zentral in PostgreSQL
+Keine unnötigen Frameworks
+Vanilla JavaScript, solange es sinnvoll ist
+Neue Module sollen ohne Umbau ergänzt werden können
+
+Das ist kein technisches Dokument.
+
+Sondern eine Art Kompass.
+
+Immer wenn wir überlegen:
+
+"Sollen wir jetzt Framework X einbauen?"
+
+können wir schauen:
+
+Passt das noch zu unserer Philosophie?

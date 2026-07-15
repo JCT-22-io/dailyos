@@ -1,0 +1,3 @@
+Warum brauchen wir export?
+
+Weil router.js seine Funktionen für app.js bereitstellt.

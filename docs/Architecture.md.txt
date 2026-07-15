@@ -1,0 +1,241 @@
+Die Architektur in einem Satz
+
+Ich würde DailyOS inzwischen so beschreiben:
+
+DailyOS ist eine modulare Single-Page-Application, deren Kern (Dashboard, Router und Authentifizierung) vom eigentlichen Funktionsumfang getrennt ist. Jedes Modul ist eine eigenständige Mini-Anwendung, die über einen gemeinsamen Einstiegspunkt gestartet wird und unabhängig erweitert werden kann.
+
+                                    DailyOS
+                                       │
+                     ┌─────────────────┴─────────────────┐
+                     │                                   │
+                Frontend                           Backend
+               (GitHub Pages)                     (Supabase)
+                     │                                   │
+                     │                                   │
+        ┌────────────┴────────────┐          ┌───────────┴───────────┐
+        │                         │          │                       │
+     Browser                 PostgreSQL   Auth                  Storage
+        │                         │
+        │                         │
+        └─────────────── API (Supabase SDK) ───────────────┘
+
+
+Frontend:
+
+src/
+│
+├── main.js
+│
+├── core/
+│   ├── app.js
+│   ├── router.js
+│   ├── modules.js
+│   └── navigation.js
+│
+├── components/
+│   ├── dashboard.js
+│   ├── header.js
+│   ├── footer.js
+│   ├── tile.js
+│   └── dialog.js
+│
+├── modules/
+│   ├── bread/
+│   ├── coffee/
+│   ├── calendar/
+│   ├── worktime/
+│   ├── sport/
+│   ├── household/
+│   └── meat/
+│
+├── services/
+│   ├── supabase.js
+│   ├── auth.js
+│   ├── storage.js
+│   └── settings.js
+│
+├── styles/
+│
+└── assets/
+
+Zusammenspiel:
+
+                    main.js
+                        │
+                        ▼
+                    initApp()
+                        │
+                        ▼
+                     app.js
+                        │
+         ┌──────────────┼──────────────┐
+         ▼              ▼              ▼
+      Header        Dashboard       Footer
+                        │
+                        ▼
+                  modules.js
+                        │
+                        ▼
+              verfügbare Module
+                        │
+                        ▼
+                 router.open()
+                        │
+                        ▼
+              gewünschtes Modul
+
+
+Ein Modul:
+
+modules/
+
+coffee/
+
+├── index.js
+├── view.js
+├── service.js
+├── state.js
+└── styles.css
+
+
+index.js
+Einstiegspunkt
+
+Router
+
+↓
+
+entry()
+
+↓
+
+Coffee startet
+
+view.js
+UL
+
+Buttons
+
+Grid
+
+Karten
+
+Formulare
+
+
+service.js
+
+Kommunikation.
+
+Heute:
+
+localStorage
+
+Später:
+
+Supabase
+
+state.js
+
+Temporäre Daten.
+
+Zum Beispiel:
+
+aktuelle Bohne
+
+aktuelle Methode
+
+Filter
+
+Nicht alles muss sofort entstehen, aber wir haben bereits einen Platz dafür.
+
+Router:
+
+router
+
+│
+
+├── open(module)
+
+├── back()
+
+└── home()
+
+Der Router kennt:
+
+aktuelle Seite
+Navigation
+Verlauf
+
+Er kennt keine Module.
+
+Dashboard:
+
+Dashboard
+
+↓
+
+modules.js lesen
+
+↓
+
+Kacheln erzeugen
+
+↓
+
+Klick
+
+↓
+
+router.open()
+
+Das Dashboard kennt ebenfalls keine Module
+
+Datenfluss:
+
+Benutzer
+
+↓
+
+Dashboard
+
+↓
+
+Router
+
+↓
+
+Coffee
+
+↓
+
+Service
+
+↓
+
+Supabase
+
+↓
+
+PostgreSQL
+
+Und zurück:
+
+PostgreSQL
+
+↓
+
+Supabase
+
+↓
+
+Service
+
+↓
+
+Coffee
+
+↓
+
+Benutzer
+
