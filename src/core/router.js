@@ -4,8 +4,9 @@ let currentModule = null;
 const history = [];
 
 export function open(module) {
-    console.log('Open Module: ${module}');
-    currentModule = module;   
+    currentModule = module;
+    console.log(`Open Module: ${module.title}`);
+    module.entry();
 }
 
 export function back() {
