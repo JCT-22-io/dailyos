@@ -1,3 +1,7 @@
+DailyOS ist eine modulare Progressive Web App (PWA) für den persönlichen Alltag.
+
+Das Dashboard besteht aus eigenständigen Modulen, die unabhängig voneinander entwickelt und erweitert werden können. Ziel ist eine langfristig wartbare Architektur mit klaren Verantwortlichkeiten und einer einfachen Erweiterbarkeit.
+
 DailyOS Philosophy
 Mobile First
 Einfach statt komplex

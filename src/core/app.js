@@ -1,3 +1,9 @@
+import { renderDashboard } from '../components/dashboard.js';
+
 export function initApp() {
-    console.log('DailyOS startet');
+    
+    const appContainer = document.getElementById('app');
+
+    renderDashboard(appContainer);
+
 }

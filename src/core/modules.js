@@ -7,6 +7,7 @@ export const modules = [
     icon: 'coffee.svg',
     order: 0,
     enabled: true,
-    entry: coffeeEntry
+    entry: coffeeEntry,
+    showOnDashboard: true
     }
 ];

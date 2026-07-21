@@ -1,9 +1,3 @@
-export function initApp() {
-    console.log('DailyOS startet');
-}
-
-/*
-
 // src/main.js
 
 // ==========================================
@@ -132,5 +126,3 @@ document.getElementById('search-input').addEventListener('input', (event) => {
 // ==========================================
 // Legt beim ersten Laden das Dashboard als Basis auf den Stapel
 navigateTo(renderDashboard);
-
-*/
